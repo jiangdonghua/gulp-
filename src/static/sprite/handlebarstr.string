@@ -1,0 +1,14 @@
+{{#block "sprites"}}
+   .icon {
+    display: inline-block;
+    background-size: {{spritesheet.px.width}} {{spritesheet.px.height}};
+    }
+{{#each sprites}}
+.icon-{{name}}{{{selector}}} {
+  background-image: url({{{escaped_image}}});
+  background-position: {{px.offset_x}} {{px.offset_y}};
+  width: {{px.width}};
+  height: {{px.height}};
+}
+{{/each}}
+{{/block}}

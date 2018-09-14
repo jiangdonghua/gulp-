@@ -1,0 +1,145 @@
+body, button, dd, dl, dt, h1, h2, h3, h4, input, li, ol, p, td, textarea, th, ul {
+    margin: 0;
+    padding: 0
+}
+
+body, html {
+    width: 100%;
+    font-size: 13px;
+    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", SimHei, "\5B8B\4F53", simsun, sans-serif;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fbf9f8
+}
+
+[contenteditable=true], input, textarea {
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body, button, input, select, textarea {
+    font: 12px/1.5 'Microsoft YaHei', arial, sans-serif
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%
+}
+
+em {
+    font-style: normal
+}
+
+ol, ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-touch-callout: none
+}
+
+a:active {
+    outline: 0
+}
+
+img {
+    border: 0;
+    -webkit-touch-callout: none
+}
+
+button, input, select, textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+a, button, input, optgroup, select, textarea {
+    -webkit-tap-highlight-color: transparent
+}
+
+button, input, optgroup, select, textarea {
+    font: inherit;
+    -webkit-appearance: none;
+    outline: 0;
+    line-height: normal
+}
+
+button {
+    border-radius: 0
+}
+
+.cClear {
+    clear: both;
+    zoom: 1
+}
+
+.cClear:after, .cClear:before {
+    content: "";
+    display: block;
+    overflow: hidden
+}
+
+.cClear:after {
+    clear: both
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #f5f5f5
+}
+
+body, html {
+    height: 100%
+}
+
+.layout {
+    position: relative;
+    width: 94.6666666%;
+    margin: 0 auto
+}
+
+.colorOrange {
+    color: #f09553
+}
+
+.statistical-detail {
+    margin: .2rem 0
+}
+
+.statistical-detail ul li {
+    padding: .25rem;
+    border-top: .06rem solid #0f3758;
+    border-radius: .08rem;
+    background-color: #fff;
+    margin-bottom: .2rem;
+    font-size: .28rem;
+    line-height: .48rem;
+    color: #000
+}
+
+.statistical-detail ul li > div {
+    width: 100%
+}

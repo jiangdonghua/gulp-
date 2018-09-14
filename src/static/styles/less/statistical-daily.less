@@ -1,0 +1,438 @@
+/*reset*/
+body, button, dd, dl, dt, h1, h2, h3, h4, input, li, ol, p, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  font-size: 13px;
+  font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", SimHei, "\5B8B\4F53", simsun, sans-serif;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: #fbf9f8;
+}
+
+[contenteditable = "true"], input, textarea {
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body, button, input, select, textarea {
+  font: 12px/1.5 'Microsoft YaHei', arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+em {
+  font-style: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+a:active {
+  outline: 0;
+}
+
+img {
+  border: 0;
+  -webkit-touch-callout: none;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a, button, input, optgroup, select, textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+button, input, optgroup, select, textarea {
+  /*color:inherit;*/
+  font: inherit;
+  -webkit-appearance: none;
+  outline: none;
+  line-height: normal;
+}
+
+button {
+  border-radius: 0;
+}
+
+/*cClear*/
+.cClear {
+  clear: both;
+  zoom: 1
+}
+
+.cClear:before, .cClear:after {
+  content: "";
+  display: block;
+  overflow: hidden
+}
+
+.cClear:after {
+  clear: both
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/*mixin*/
+// 2x 3x 背景图片
+.bg-image(@url) {
+  background-image: url('../../../static/images/@{url}@2x.png');
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3) {
+    background-image: url('../../../static/images/@{url}@3x.png');
+  }
+}
+
+// 统一盒模型
+.border-box(@default:border-box) {
+  -webkit-box-sizing: @default;
+  -moz-box-sizing: @default;
+  box-sizing: @default;
+}
+
+//border-radius
+.border-radius(@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// 1 像素边框问题
+.border-1px(@color:#e8e8e8,@type:solid) {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    border-bottom: 1px @type @color;
+  }
+}
+.borderR-1px(@color:#e8e8e8,@type:solid) {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    bottom: 0;
+    border-right: 1px @type @color;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5) {
+  .border-1px {
+    &:after {
+      -webkit-transform: scaleY(0.7);
+      transform: scaleY(0.7);
+    }
+  }
+  .borderR-1px {
+    &:after {
+      -webkit-transform: scaleY(0.7);
+      transform: scaleY(0.7);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+  .border-1px {
+    &:after {
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+  .borderR-1px {
+    &:after {
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+}
+
+// Opacity
+
+.opacity(@factor) {
+  @iefactor: @factor*100;
+  filter: ~"alpha(opacity=@{iefactor})";
+  opacity: @factor;
+}
+
+// Flexbox
+.flex-block() {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex(@val) {
+  -webkit-box-flex: @val;
+  -webkit-flex: @val;
+  -ms-flex: @val;
+  flex: @val;
+}
+
+.flex-wrap(@wrap:wrap) {
+  -webkit-flex-wrap: @wrap;
+  flex-wrap: @wrap;
+}
+
+/*box-shadow*/
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @color: rgba(0,0,0,0.5)) {
+  -webkit-box-shadow: @x @y @blur @color;
+  -moz-box-shadow: @x @y @blur @color;
+  box-shadow: @x @y @blur @color;
+}
+
+/*transform*/
+.transform(@style) {
+  transform: @style;
+  -ms-transform: @style;
+  -moz-transform: @style;
+  -webkit-transform: @style;
+  -o-transform: rotate @style;
+}
+
+/*button*/
+.button(@radius:0.07rem,@width:100%,@height:0.62rem,@bgColor:#233e6d,@color:#fff,@fz:0.28rem) {
+  .border-radius(@radius);
+  text-align: center;
+  width: @width;
+  height: @height;
+  background-color: @bgColor;
+  color: @color;
+  line-height: @height;
+  border: 0 none;
+  font-size: @fz;
+}
+
+.button-disabled(@bgColor:#e5e5e5,@color:#fff) {
+  background-color: @bgColor;
+  color: @color;
+}
+
+/**/
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
+}
+
+body, html {
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../fonts/iconfont.eot');
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/iconfont.woff') format('woff'),
+  url('../fonts/iconfont.ttf') format('truetype'),
+  url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+[class*="icon-"], [class^="icon-"] {
+  font-family: "iconfont" !important;
+  font-size: 0.28rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+}
+
+.icon-arrow-right:before {
+  content: "\e65f";
+}
+
+.icon-arrow-left:before {
+  content: "\e660";
+}
+
+/*layout*/
+.layout {
+  position: relative;
+  width: 94.6666666%;
+  margin: 0 auto;
+}
+.colorOrange{
+  color: #f09553;
+}
+.colorDark{
+  color: #000;
+}
+.colorBlue{
+  color: #233e6d;
+}
+.fz28{
+  font-size: 0.28rem;
+}
+.fz30{
+  font-size: 0.3rem;
+}
+.mr30{
+  margin-right: 0.3rem;
+}
+/*daily*/
+.statistical-daily {
+  .semi-circle{
+    position: absolute;
+    width: 0.13rem;
+    height: 0.26rem;
+    top:50%;
+    z-index: 1;
+    transform: translateY(-50%) rotate(180deg);
+    background-color: #f5f5f5;
+  }
+  .semi-circle-left {
+    left: 0;
+    border-radius: 0.13rem 0 0 0.13rem; /* 左上、右上、右下、左下 */
+  }
+  .semi-circle-right {
+    right: 0;
+    border-radius: 0 0.13rem 0.13rem 0;
+  }
+  .statistical {
+    margin: 0.2rem 0 0 0;
+  }
+  .statistical-title {
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.32rem;
+    text-align: center;
+  }
+  .line-circle{
+    .border-1px(#dddddd,dashed);
+    position: relative;
+    height: 0;
+    width: 100%;
+    margin-bottom: 0.22rem;
+  }
+  .statistical-top {
+    text-align: center;
+    .statistical-top-panel {
+      position: relative;
+      width: 48.6%;
+      background-color: #fff;
+      height: 2.96rem;
+      border-radius: 6px;
+      .detail{
+        position: relative;
+        p{
+          line-height: 0.42rem;
+        }
+        .icon-arrow-right{
+          position: absolute;
+          right: 0.3rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  .statistical-center{
+    .statistical-top-panel{
+      margin-bottom: 0.16rem;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+    .line-circle{
+      margin-bottom: 0.12rem;
+    }
+    .detail{
+     padding-bottom: 0.1rem;
+      .detail-money{
+        position: relative;
+        overflow: hidden;
+        margin-left: 0.3rem;
+        padding: 0.2rem 0.3rem 0.2rem 0;
+        &:first-child{
+          .border-1px(#dddddd,dashed);
+        }
+        p{
+          float: left;
+        }
+        .icon-arrow-right{
+          position: absolute;
+          right: 0.3rem;
+          top: 50%;
+          transform: translateY(-50%);
+
+        }
+      }
+    }
+  }
+  .statistical-bottom{
+    background-color: #fff;
+    border-radius: 6px;
+    margin-bottom: 0.3rem;
+    h2{
+      font-size: 0.28rem;
+    }
+    .statistical-bottom-top{
+      display: flex;
+      .border-1px(#dddddd,dashed);
+      .bottom-top-detail{
+        padding: 0 0 0.2rem 0.3rem;
+        flex: 1;
+        &:first-child{
+          .borderR-1px(#dddddd,dashed);
+        }
+        p{
+          line-height: 0.48rem;
+          span:first-child{
+           padding-right: 0.1rem;
+          }
+        }
+      }
+      h2{
+        padding: 0.26rem 0 0.12rem 0;
+      }
+    }
+    .statistical-bottom-bottom{
+      padding: 0.23rem 0 0.23rem 0.3rem;
+      p{
+        line-height: 0.48rem;
+        span:first-child{
+          font-weight: bold;
+          padding-right: 0.1rem;
+        }
+      }
+    }
+  }
+}

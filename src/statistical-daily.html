@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <!-- build:css static/styles/statistical-daily.css -->
+    <link rel="stylesheet" href="./static/styles/css/statistical-daily.css">
+    <!-- endbuild -->
+    <!-- build:js static/scripts/common.js -->
+    <script src="./static/js/lib/fastclick.min.js"></script>
+    <script src="./static/js/lib/rem.js"></script>
+    <!-- endbuild -->
+</head>
+<body>
+<div class="statistical-daily">
+    <div class="layout">
+        <div class="statistical statistical-top cClear">
+            <a href="" class="statistical-top-panel fl">
+                <h2 class="statistical-title colorOrange">今日待收</h2>
+                <div class="line-circle">
+                    <div class="semi-circle semi-circle-left"></div>
+                    <div class="semi-circle semi-circle-right"></div>
+                </div>
+                <div class="detail">
+                    <p class="colorDark fz28">待收数(笔)</p>
+                    <p class="colorOrange fz30">15</p>
+                    <p class="colorDark fz28">待收金额(元)</p>
+                    <p class="colorOrange fz30">8,397,721.17</p>
+                    <i class="iconfont icon-arrow-right"></i>
+                </div>
+            </a>
+            <a href="" class="statistical-top-panel fr">
+                <h2 class="statistical-title colorOrange">今日待付</h2>
+                <div class="line-circle">
+                    <div class="semi-circle semi-circle-left"></div>
+                    <div class="semi-circle semi-circle-right"></div>
+                </div>
+                <div class="detail">
+                    <p class="colorDark fz28">待付数(笔)</p>
+                    <p class="colorOrange fz30">15</p>
+                    <p class="colorDark fz28">待付金额(元)</p>
+                    <p class="colorOrange fz30">8,397,721.17</p>
+                    <i class="iconfont icon-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+        <div class="statistical statistical-center">
+            <div class="statistical-top-panel">
+                <h2 class="statistical-title colorBlue">出/入库统计</h2>
+                <div class="line-circle">
+                    <div class="semi-circle semi-circle-left"></div>
+                    <div class="semi-circle semi-circle-right"></div>
+                </div>
+                <div class="detail">
+                    <div class="detail-money">
+                        <p class="mr30">
+                            <span class="colorDark fz28">出库批数：</span>
+                            <span class="colorOrange fz30">1508</span>
+                        </p>
+                        <p>
+                            <span class="colorDark fz28">出库数量(吨)：</span>
+                            <span class="colorOrange fz30">71429.0378</span>
+                        </p>
+                        <i class="iconfont icon-arrow-right fr"></i>
+                    </div>
+                    <div class="detail-money cClear">
+                        <p class="mr30">
+                            <span class="colorDark fz28">出库批数：</span>
+                            <span class="colorOrange fz30">1508</span>
+                        </p>
+                        <p>
+                            <span class="colorDark fz28">入库数量(吨)：</span>
+                            <span class="colorOrange fz30">71429.0378</span>
+                        </p>
+
+                        <i class="iconfont icon-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="statistical-top-panel">
+                <h2 class="statistical-title colorBlue">收/付款统计</h2>
+                <div class="line-circle">
+                    <div class="semi-circle semi-circle-left"></div>
+                    <div class="semi-circle semi-circle-right"></div>
+                </div>
+                <div class="detail">
+                    <div class="detail-money">
+                        <p class="mr30">
+                            <span class="colorDark fz28">收款数(笔)：</span>
+                            <span class="colorOrange fz30">15</span>
+                        </p>
+                        <p>
+                            <span class="colorDark fz28">收款金额(元)：</span>
+                            <span class="colorOrange fz30">8,397,721.17</span>
+                        </p>
+                        <i class="iconfont icon-arrow-right fr"></i>
+                    </div>
+                    <div class="detail-money cClear">
+                        <p class="mr30">
+                            <span class="colorDark fz28">付款数(笔)：</span>
+                            <span class="colorOrange fz30">15</span>
+                        </p>
+                        <p>
+                            <span class="colorDark fz28">付款金额(元)：</span>
+                            <span class="colorOrange fz30">8,397,721.17</span>
+                        </p>
+
+                        <i class="iconfont icon-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="statistical statistical-bottom">
+            <div class="statistical-bottom-top">
+                <div class="bottom-top-detail">
+                    <h2 class="colorBlue">当前库存(吨)</h2>
+                    <p><span class="colorDark fz28">北港</span><span class="colorOrange fz30">128631.0940</span></p>
+                    <p><span class="colorDark fz28">南港</span><span class="colorOrange fz30">40964.4400</span></p>
+                    <p><span class="colorDark fz28">在途</span><span class="colorOrange fz30">40964.4400</span></p>
+                </div>
+                <div class="bottom-top-detail">
+                    <h2 class="colorBlue">库存成本单价(元)</h2>
+                    <p><span class="colorDark fz28">北港</span><span class="colorOrange fz30">1752.8349</span></p>
+                    <p><span class="colorDark fz28">南港</span><span class="colorOrange fz30">1880.7142</span></p>
+                    <p><span class="colorDark fz28">在途</span><span class="colorOrange fz30">4.1011</span></p>
+                </div>
+            </div>
+            <div class="statistical-bottom-bottom">
+                <p><span class="colorBlue fz28">敞口库存数量(万吨)</span><span class="colorOrange fz30">17.834</span></p>
+                <p><span class="colorBlue fz28">敞口库存单价(元/吨)</span><span class="colorOrange fz30">1880.71</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
